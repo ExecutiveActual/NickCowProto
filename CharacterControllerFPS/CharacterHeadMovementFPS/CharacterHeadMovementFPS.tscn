@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn56juhndauvi"]
+
+[ext_resource type="Script" uid="uid://t17uyjcw6xu4" path="res://CharacterControllerFPS/CharacterHeadMovementFPS/CharacterHeadMovementFPS.cs" id="1_15qe4"]
+
+[node name="CharacterHeadMovementFPS" type="Node3D"]
+script = ExtResource("1_15qe4")

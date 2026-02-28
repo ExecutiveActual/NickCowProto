@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8luu2g8tkqcf"]
+
+[ext_resource type="Script" uid="uid://cat3faeu3cul5" path="res://Behaviours/Character3D/CharacterBodyFollowHead3D/CharacterBodyFollowHead3D.cs" id="1_eywvx"]
+[ext_resource type="Curve" uid="uid://bcdkyx5ddujds" path="res://Behaviours/Character3D/CharacterBodyFollowHead3D/BodyFollowCurves/BodyFollowCurve.tres" id="2_154p4"]
+
+[node name="CharacterBodyFollowHead3D" type="Node3D"]
+script = ExtResource("1_eywvx")
+BaseStiffness = 160.0
+Damping = 33.0
+FollowResponseCurve = ExtResource("2_154p4")

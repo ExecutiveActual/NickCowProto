@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw4q7p5fv455"]
+
+[ext_resource type="PackedScene" uid="uid://cio2lqqm7m5qh" path="res://Imports/Bobcatg2/BobwhiteG2.glb" id="1_03aqm"]
+[ext_resource type="Material" uid="uid://5hgi1c46k3n0" path="res://Imports/Bobcatg2/bobwhiteg2.tres" id="2_y5wkm"]
+
+[node name="GUN_DBShotgun" instance=ExtResource("1_03aqm")]
+
+[node name="BobwhiteG2" parent="Gun_A/Skeleton3D" index="0"]
+material_override = ExtResource("2_y5wkm")
+
+[node name="Boreline" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.57129985)
+gizmo_extents = 0.02
+
+[node name="RearContactPoint" type="Marker3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049104348, 0.56592226)
+gizmo_extents = 0.02

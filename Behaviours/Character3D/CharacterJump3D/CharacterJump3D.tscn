@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://f7ha51fur3rb"]
+
+[ext_resource type="Script" uid="uid://tp0o1dv85jwi" path="res://Behaviours/Character3D/CharacterJump3D/CharacterJump3D.cs" id="1_itv0b"]
+
+[node name="CharacterJump3D" type="Node3D"]
+script = ExtResource("1_itv0b")

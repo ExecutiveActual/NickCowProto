@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqs6jutd6fkl"]
+
+[ext_resource type="PackedScene" uid="uid://cio2lqqm7m5qh" path="res://Imports/Bobcatg2/BobwhiteG2.glb" id="1_8hb1p"]
+[ext_resource type="Material" uid="uid://5hgi1c46k3n0" path="res://Imports/Bobcatg2/bobwhiteg2.tres" id="2_85x1t"]
+
+[node name="Mesh_DBShotgun" instance=ExtResource("1_8hb1p")]
+
+[node name="BobwhiteG2" parent="Gun_A/Skeleton3D" index="0"]
+material_override = ExtResource("2_85x1t")

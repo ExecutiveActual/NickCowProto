@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://5hgi1c46k3n0"]
+
+[ext_resource type="Texture2D" uid="uid://c1xsabbg6d6xf" path="res://Imports/Bobcatg2/BobwhiteG2_color.png" id="1_24foh"]
+[ext_resource type="Texture2D" uid="uid://uar4bit84xoi" path="res://Imports/Bobcatg2/BobwhiteG2_metallic.png" id="2_w10h0"]
+[ext_resource type="Texture2D" uid="uid://vc2w02q0et3a" path="res://Imports/Bobcatg2/BobwhiteG2_normal.png" id="3_17glu"]
+[ext_resource type="Texture2D" uid="uid://exqsu1pucd45" path="res://Imports/Bobcatg2/BobwhiteG2_roughness.png" id="4_cvlq3"]
+
+[resource]
+albedo_texture = ExtResource("1_24foh")
+metallic = 1.0
+metallic_texture = ExtResource("2_w10h0")
+roughness_texture = ExtResource("4_cvlq3")
+normal_enabled = true
+normal_texture = ExtResource("3_17glu")

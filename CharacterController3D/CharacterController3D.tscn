@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxesw6m5dgf60"]
+
+[ext_resource type="Script" uid="uid://csavbvu5uefco" path="res://CharacterController3D/CharacterController3D.cs" id="1_s5ax7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ma5b5"]
+radius = 0.175
+
+[sub_resource type="SphereMesh" id="SphereMesh_ma5b5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ma5b5"]
+radius = 0.27
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ma5b5"]
+
+[node name="CharacterController3D" type="CharacterBody3D"]
+script = ExtResource("1_s5ax7")
+
+[node name="Coll_Head" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6245337, 0)
+shape = SubResource("SphereShape3D_ma5b5")
+
+[node name="Mesh_Head" type="MeshInstance3D" parent="Coll_Head"]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+mesh = SubResource("SphereMesh_ma5b5")
+skeleton = NodePath("../..")
+
+[node name="Coll_Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_ma5b5")
+
+[node name="Mesh_Body" type="MeshInstance3D" parent="Coll_Body"]
+transform = Transform3D(0.54, 0, 0, 0, 0.75, 0, 0, 0, 0.54, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ma5b5")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://32mfk0mfrt0f"]
+
+[ext_resource type="Script" uid="uid://bwm1hnvib1r51" path="res://Behaviours/Character3D/CharacterMovement3D/CharacterMovement3D.cs" id="1_or0qi"]
+
+[node name="CharacterMovement3D" type="Node3D"]
+script = ExtResource("1_or0qi")
