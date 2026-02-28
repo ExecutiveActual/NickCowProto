@@ -28,6 +28,12 @@ albedo_color = Color(1.353256, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Marker3D SPAWN" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Marker3D SPAWN2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.25881904, 0.9330127, -0.25000003, -1.4901161e-08, 0.25881907, 0.9659259, 0.9659259, 0.25000003, -0.06698732, 0, 0, 0)
 
@@ -101,11 +107,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iexbh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Target3"]
 shape = SubResource("CapsuleShape3D_8omty")
-
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-gizmo_extents = 2.0
-
-[node name="Marker3D2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-gizmo_extents = 2.0
