@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://qaa8n0ssdiug"]
+
+[ext_resource type="PackedScene" uid="uid://ckqs6jutd6fkl" path="res://Imports/Bobcatg2/_Mesh_DBShotgun.tscn" id="1_5t552"]
+[ext_resource type="Script" uid="uid://bricxm8cl8xce" path="res://Behaviours/Item/WorldItem.cs" id="1_b6k7q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72klk"]
+size = Vector3(0.05706787, 0.10028076, 1.145752)
+
+[node name="WorldItem_DBShotgun" type="Area3D"]
+script = ExtResource("1_b6k7q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.034625247, 0.0008544922)
+shape = SubResource("BoxShape3D_72klk")
+
+[node name="ItemData" type="Node" parent="."]
+
+[node name="Mesh_DBShotgun" parent="." instance=ExtResource("1_5t552")]

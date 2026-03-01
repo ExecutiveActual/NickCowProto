@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://5e3ag81s0dgc" path="res://Behaviours/Character3D/CharacterCrouch3D/CharacterCrouch3D.tscn" id="5_tsid2"]
 [ext_resource type="PackedScene" uid="uid://c8luu2g8tkqcf" path="res://Behaviours/Character3D/CharacterBodyFollowHead3D/CharacterBodyFollowHead3D.tscn" id="8_lu4qf"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ma5b5"]
+radius = 0.175
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nui8"]
 resource_name = "BobwhiteG2"
 cull_mode = 2
@@ -50,9 +53,6 @@ bind/3/name = &"Action"
 bind/3/bone = -1
 bind/3/pose = Transform3D(1, -1.2434448e-06, -1.7475517e-07, 2.2737319e-13, -0.139173, 0.9902677, -1.2556642e-06, -0.9902662, -0.13917316, 4.335542e-08, -0.18381828, 0.034524895)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ma5b5"]
-radius = 0.175
-
 [sub_resource type="SphereMesh" id="SphereMesh_ma5b5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ma5b5"]
@@ -67,17 +67,26 @@ Gravity = 18.0
 GroundAcceleration = 50.0
 GroundFriction = 50.0
 
-[node name="HandItemPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+[node name="FocusTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6245337, 0)
 
-[node name="HandItem_DBShotgun" type="Node3D" parent="HandItemPivot"]
+[node name="Marker3D" type="Marker3D" parent="FocusTarget"]
 
-[node name="Mesh_DBShotgun" type="Node3D" parent="HandItemPivot/HandItem_DBShotgun"]
+[node name="Coll_Head" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6245337, 0)
+shape = SubResource("SphereShape3D_ma5b5")
+
+[node name="HandItemPivot" type="Node3D" parent="Coll_Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075466394, 0)
+
+[node name="HandItem_DBShotgun" type="Node3D" parent="Coll_Head/HandItemPivot"]
+
+[node name="Mesh_DBShotgun" type="Node3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065693974, -0.061199784, -0.56386113)
 
-[node name="Gun_A" type="Node3D" parent="HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
+[node name="Gun_A" type="Node3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun/Gun_A"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun/Gun_A"]
 bones/0/name = "Grip"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-1, 2.1316289e-14, 3.8941442e-07, -3.7085192e-07, 0.30506265, -0.9523324, -1.1879577e-07, -0.9523327, -0.30506253, -1.5522043e-10, -0.050551925, 0.31919074)
@@ -107,33 +116,25 @@ bones/3/position = Vector3(-6.3671637e-09, 0.14409418, -0.015961353)
 bones/3/rotation = Quaternion(8.195573e-07, -0.08508583, 0.99637365, -3.6852885e-08)
 bones/3/scale = Vector3(1, 1, 1.0000017)
 
-[node name="BobwhiteG2" type="MeshInstance3D" parent="HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun/Gun_A/Skeleton3D"]
+[node name="BobwhiteG2" type="MeshInstance3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun/Gun_A/Skeleton3D"]
 material_override = ExtResource("3_hm1f8")
 mesh = SubResource("ArrayMesh_ovv28")
 skin = SubResource("Skin_hbf5j")
 
-[node name="Marker3D_Origin" type="Marker3D" parent="HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
+[node name="Marker3D_Origin" type="Marker3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05792141, 0.56386113)
 gizmo_extents = 0.33
 
-[node name="Marker3D_Muzzle" type="Marker3D" parent="HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
+[node name="Marker3D_Muzzle" type="Marker3D" parent="Coll_Head/HandItemPivot/HandItem_DBShotgun/Mesh_DBShotgun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5710722)
-
-[node name="Coll_Head" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6245337, 0)
-shape = SubResource("SphereShape3D_ma5b5")
 
 [node name="Mesh_Head" type="MeshInstance3D" parent="Coll_Head"]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 mesh = SubResource("SphereMesh_ma5b5")
 skeleton = NodePath("../..")
 
-[node name="Camera3D" type="Camera3D" parent="Coll_Head"]
+[node name="Camera3D_FPS" type="Camera3D" parent="Coll_Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075466394, 0)
-
-[node name="FocusTarget" type="Node3D" parent="Coll_Head"]
-
-[node name="Marker3D" type="Marker3D" parent="Coll_Head/FocusTarget"]
 
 [node name="Coll_Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
