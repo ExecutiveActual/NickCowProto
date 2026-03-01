@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5wluj4mutiat"]
+[gd_scene load_steps=14 format=3 uid="uid://b5wluj4mutiat"]
 
+[ext_resource type="PackedScene" uid="uid://du5r0e3kqfsgt" path="res://Behaviours/HealthManager/HealthManager.tscn" id="1_72klk"]
 [ext_resource type="PackedScene" uid="uid://d4fyskxvi67mx" path="res://CharacterControllerFPS/CharacterControllerFPS.tscn" id="1_klsoq"]
 [ext_resource type="PackedScene" uid="uid://qaa8n0ssdiug" path="res://Behaviours/Item/Guns/DBShotgun/WorldItem_DBShotgun.tscn" id="2_8omty"]
 
@@ -89,6 +90,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f3xsm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Target"]
 shape = SubResource("CapsuleShape3D_8omty")
 
+[node name="HealthManager" parent="Target" instance=ExtResource("1_72klk")]
+
 [node name="Target2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -64)
 
@@ -100,6 +103,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iexbh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Target2"]
 shape = SubResource("CapsuleShape3D_8omty")
 
+[node name="HealthManager" parent="Target2" instance=ExtResource("1_72klk")]
+
 [node name="Target3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -64)
 
@@ -110,6 +115,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iexbh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Target3"]
 shape = SubResource("CapsuleShape3D_8omty")
+
+[node name="HealthManager" parent="Target3" instance=ExtResource("1_72klk")]
 
 [node name="CharacterControllerFPS" parent="." instance=ExtResource("1_klsoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)

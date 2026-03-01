@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://deloiee41j6w0"]
+[gd_scene load_steps=6 format=4 uid="uid://deloiee41j6w0"]
 
 [ext_resource type="Material" uid="uid://5hgi1c46k3n0" path="res://Imports/Bobcatg2/bobwhiteg2.tres" id="1_u7dbe"]
+[ext_resource type="Script" uid="uid://872fiwos2grs" path="res://Behaviours/Item/Guns/DBShotgun/BAD_Shoot.cs" id="2_j7led"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nui8"]
 resource_name = "BobwhiteG2"
@@ -47,7 +48,7 @@ bind/3/pose = Transform3D(1, -1.2434448e-06, -1.7475517e-07, 2.2737319e-13, -0.1
 [node name="HandItem_DBShotgun" type="Node3D"]
 
 [node name="Mesh_DBShotgun" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05792141, -0.56386113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04370892, -0.045908146, -0.56386113)
 
 [node name="Gun_A" type="Node3D" parent="Mesh_DBShotgun"]
 
@@ -92,3 +93,9 @@ gizmo_extents = 0.33
 
 [node name="Marker3D_Muzzle" type="Marker3D" parent="Mesh_DBShotgun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5710722)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="BAD_Shoot" type="Node" parent="." node_paths=PackedStringArray("Muzzle")]
+script = ExtResource("2_j7led")
+Muzzle = NodePath("../Mesh_DBShotgun/Marker3D_Muzzle")
