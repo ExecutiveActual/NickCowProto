@@ -77,11 +77,8 @@ public partial class BAD_Shoot : Node
 
 			GD.Print($"Hit: {collider.Name} at {hitPos}");
 
-			// Apply damage if target has the method
-			if (collider.HasMethod("TakeDamage"))
-			{
-				collider.Call("TakeDamage", Damage);
-			}
+			OnTargetHit(collider);
+			
 
 			// // Spawn impact effect
 			// if (BulletImpactEffect != null)
@@ -100,4 +97,22 @@ public partial class BAD_Shoot : Node
 			GD.Print("Shot missed (no hit within range)");
 		}
 	}
+
+
+	private void OnTargetHit(Node target)
+	{
+
+		HealthManager healthManager = target.GetNodeOrNull<HealthManager>("HealthManager");
+
+		if (healthManager != null)
+		{
+			healthManager.TakeDamage(Damage);
+		}
+		else
+		{
+			GD.Print($"Target {target.Name} has no HealthManager, attempting generic damage call...");
+		}
+	}
+
+
 }
